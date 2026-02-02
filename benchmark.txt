@@ -1,0 +1,9 @@
+--- ISLAND PERFORMANCE BENCHMARK ---
+Date: 2026-02-01 21:38:25
+Total System RAM: 31.93 GB
+Live App RAM (Dev Mode): 62.38 MB
+Individual Processes:
+- my-island-app-dev: 29.39 MB
+- wails (CLI/Watcher): 32.99 MB
+Efficiency: 0.0962% of system total
+Transparency Method: Win32 Layered Window (WS_EX_LAYERED)
