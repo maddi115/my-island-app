@@ -1,26 +1,90 @@
-html {
-    background-color: rgba(27, 38, 54, 1);
-    text-align: center;
-    color: white;
+:root {
+  --bg-dark: #1a1a1a;
+  --text-light: #ffffff;
+  --accent-color: #4a4a4a;
+  --orange-bg: #ff6b35;
+  --transition-speed: 0.4s;
 }
-
 body {
-    margin: 0;
-    color: white;
-    font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
-    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: transparent;
+  font-family: system-ui, sans-serif;
+  overflow: hidden;
 }
-
-@font-face {
-    font-family: "Nunito";
-    font-style: normal;
-    font-weight: 400;
-    src: local(""),
-    url("assets/fonts/nunito-v16-latin-regular.woff2") format("woff2");
+.maddies-little-island {
+  perspective: 1000px;
+  position: relative;
 }
-
-#app {
-    height: 100vh;
-    text-align: center;
+.inner-wrapper {
+  background-color: #c3c1c3;
+  border-radius: 25px;
+  width: 70px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-speed) cubic-bezier(0.36, 0.66, 0.04, 1);
+  position: relative;
 }
+.maddies-little-island:hover .inner-wrapper {
+  width: 300px;
+  height: 45px;
+}
+.app-title {
+  position: absolute;
+  top: -25px;
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--bg-dark);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.maddies-little-island:hover .app-title { opacity: 1; }
+.default-profile {
+  position: absolute;
+  width: 32px;
+  height: 35px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.3s ease;
+}
+.maddies-little-island:hover .default-profile { opacity: 0; }
+.apps-container {
+  display: flex;
+  gap: 15px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.maddies-little-island:hover .apps-container { opacity: 1; }
+.app-icon {
+  width: 19px;
+  height: 22px;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.maddies-little-island:hover .app-icon {
+  width: 35px;
+  height: 35px;
+}
+.app-icon:hover { transform: scale(1.2); }
+.app-icon i { font-size: 20px; color: var(--text-light); font-style: normal; }
+.app-icon[data-app="maddie"] {
+  background-image: url("https://i.imgur.com/8YAtaDK.png");
+  background-size: cover;
+  background-position: center;
+  background-color: transparent;
+  border-radius: 50% 14px 45% 50%;
+}
+body { background: transparent !important; }
