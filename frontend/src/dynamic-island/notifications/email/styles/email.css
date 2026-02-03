@@ -1,0 +1,22 @@
+/* Email Icon Styles */
+.email-icon {
+  background-color: #ea4335 !important;
+}
+
+/* Email Badge */
+.email-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: #ff0000;
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgb(19, 19, 19);
+}

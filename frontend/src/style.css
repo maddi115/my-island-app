@@ -6,18 +6,20 @@
   --transition-speed: 0.4s;
 }
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
   margin: 0;
+  padding: 0;
   background-color: transparent;
   font-family: system-ui, sans-serif;
   overflow: hidden;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
 }
 .maddies-little-island {
   perspective: 1000px;
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 10px;
 }
 .inner-wrapper {
   background-color: rgb(19, 19, 19);
@@ -50,8 +52,8 @@ body {
   position: absolute;
   width: 32px;
   height: 35px;
-      top: 73%;
-    left: 56%;
+  top: 73%;
+  left: 56%;
   transform: translate(-50%, -50%);
   transition: opacity 0.3s ease;
 }
@@ -73,6 +75,7 @@ body {
   justify-content: center;
   transition: all 0.3s ease;
   cursor: pointer;
+  position: relative;
 }
 .maddies-little-island:hover .app-icon {
   width: 35px;
@@ -80,8 +83,8 @@ body {
 }
 .app-icon:hover { transform: scale(1.2); }
 .app-icon i { font-size: 20px; color: var(--text-light); font-style: normal; }
-.app-icon[data-app="maddie"] {
-  background-image: url("https://i.imgur.com/gYxZ2TV.jpg");
+.app-icon[data-app=\"maddie\"] {
+  background-image: url(\"https://i.imgur.com/2D8gFpZ.png\");
   background-size: cover;
   background-position: center;
   background-color: transparent;

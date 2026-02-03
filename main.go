@@ -21,7 +21,7 @@ func main() {
 app := NewApp()
 
 err := wails.Run(&options.App{
-Title:  "my-island-app", // MUST MATCH THE FINDWINDOW CALL
+Title:  "my-island-app",
 Width:  324,
 Height: 768,
 AssetServer: &assetserver.Options{
@@ -29,7 +29,7 @@ Assets: assets,
 },
 AlwaysOnTop:      true,
 Frameless:        true,
-BackgroundColour: &options.RGBA{R: 0, G: 0, B: 0, A: 0},
+BackgroundColour: &options.RGBA{R: 50, G: 50, B: 50, A: 255}, // TEMPORARY: Gray background to see window
 OnStartup: func(ctx context.Context) {
 app.startup(ctx)
 runtime.WindowSetPosition(ctx, 889, 44)
@@ -37,7 +37,6 @@ runtime.WindowSetSize(ctx, 104, 40)
 
 go func() {
 time.Sleep(500 * time.Millisecond)
-// Searching for the title we set above
 hwnd := win.FindWindow(nil, syscall.StringToUTF16Ptr("my-island-app"))
 if hwnd != 0 {
 exStyle := win.GetWindowLong(hwnd, win.GWL_EXSTYLE)
@@ -49,7 +48,7 @@ Bind: []interface{}{
 app,
 },
 Windows: &windows.Options{
-WebviewIsTransparent:              true,
+WebviewIsTransparent:              false, // TEMPORARY: Turn off transparency
 DisableFramelessWindowDecorations: true,
 },
 })

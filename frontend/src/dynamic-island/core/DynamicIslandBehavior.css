@@ -1,0 +1,108 @@
+/* Dynamic Island Container */
+.maddies-little-island {
+  perspective: 1000px;
+  position: absolute;
+  top: 0;
+  left: 10px;
+}
+
+/* Inner Wrapper - The pill shape */
+.inner-wrapper {
+  background-color: rgb(19, 19, 19);
+  border-radius: 25px;
+  width: 70px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s cubic-bezier(0.36, 0.66, 0.04, 1);
+  position: relative;
+}
+
+/* Hover State - Expand wrapper */
+.maddies-little-island:hover .inner-wrapper {
+  width: 300px;
+  height: 45px;
+}
+
+/* App Title */
+.app-title {
+  position: absolute;
+  top: -25px;
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  color: #1a1a1a;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.maddies-little-island:hover .app-title { 
+  opacity: 1; 
+}
+
+/* Default Profile Icon */
+.default-profile {
+  position: absolute;
+  width: 32px;
+  height: 35px;
+  top: 73%;
+  left: 56%;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.3s ease;
+}
+
+.maddies-little-island:hover .default-profile { 
+  opacity: 0; 
+}
+
+/* Apps Container */
+.apps-container {
+  display: flex;
+  gap: 15px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.maddies-little-island:hover .apps-container { 
+  opacity: 1; 
+}
+
+/* App Icons */
+.app-icon {
+  width: 19px;
+  height: 22px;
+  background-color: #4a4a4a;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.maddies-little-island:hover .app-icon {
+  width: 35px;
+  height: 35px;
+}
+
+.app-icon:hover { 
+  transform: scale(1.2); 
+}
+
+.app-icon i { 
+  font-size: 20px; 
+  color: #ffffff; 
+  font-style: normal; 
+}
+
+/* Custom App Icons */
+.app-icon[data-app="maddie"] {
+  background-image: url("https://i.imgur.com/2D8gFpZ.png");
+  background-size: cover;
+  background-position: center;
+  background-color: transparent;
+  border-radius: 50% 14px 45% 50%;
+}

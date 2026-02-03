@@ -1,0 +1,34 @@
+/* Auto-Notification Styles */
+
+/* Highlight NEW emails in auto-notification */
+.email-item.new-email {
+  background-color: rgba(234, 67, 53, 0.15);
+  border: 1px solid rgba(234, 67, 53, 0.3);
+  animation: slideIn 0.3s ease-out;
+}
+
+/* Slide-in animation for new notifications */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Pulse effect on new email badge */
+.email-badge.has-new {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
