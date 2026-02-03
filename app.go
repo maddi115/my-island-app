@@ -5,24 +5,23 @@ import (
     "syscall"
     "time"
     "github.com/lxn/win"
-    "github.com/maddi115/my-island-app/backend/logic/notification"
+    "github.com/maddi115/my-island-app/backend/notifications/email"
 )
 
 type App struct {
     ctx         context.Context
-    Coordinator *notification.Coordinator
+    Coordinator *email.Coordinator
 }
 
 func NewApp() *App {
     return &App{
-        Coordinator: notification.NewCoordinator(),
+        Coordinator: email.NewCoordinator(),
     }
 }
 
 func (a *App) startup(ctx context.Context) {
     a.ctx = ctx
     
-    // Transparency fix
     go func() {
         for i := 0; i < 50; i++ {
             hwnd := win.FindWindow(nil, syscall.StringToUTF16Ptr("my-island-app"))
@@ -36,11 +35,11 @@ func (a *App) startup(ctx context.Context) {
     }()
 }
 
-// GetGoogleEmails - Gateway for frontend (Wails binds this)
-func (a *App) GetGoogleEmails() []notification.Email {
+// GetGoogleEmails - Gateway for frontend
+func (a *App) GetGoogleEmails() []email.Email {
     signals, err := a.Coordinator.CheckForNewSignal()
     if err != nil {
-        return []notification.Email{}
+        return []email.Email{}
     }
     return signals
 }

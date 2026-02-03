@@ -1,4 +1,4 @@
-export namespace notification {
+export namespace email {
 	
 	export class Email {
 	    id: string;

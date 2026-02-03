@@ -1,4 +1,4 @@
-package notification
+package email
 
 type Email struct {
     ID      string `json:"id"`

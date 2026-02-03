@@ -1,4 +1,4 @@
-package notification
+package email
 
 import (
     "fmt"
@@ -13,7 +13,7 @@ func NewCoordinator() *Coordinator {
     return &Coordinator{}
 }
 
-// CheckForNewSignal - THE FIX for "sometimes works"
+// CheckForNewSignal - detects new emails
 func (c *Coordinator) CheckForNewSignal() ([]Email, error) {
     creds, err := LoadSecretCredentials()
     if err != nil {
@@ -39,19 +39,16 @@ func (c *Coordinator) CheckForNewSignal() ([]Email, error) {
         return []Email{}, fmt.Errorf("coordinator: parse failed - %v", err)
     }
 
-    // No emails? Return EMPTY ARRAY not nil
     if len(activeSignals) == 0 {
-        fmt.Println("📭 No Google emails found")
+        fmt.Println("📭 No emails found")
         return []Email{}, nil
     }
 
-    // CRITICAL: Check if this email was already seen
     if activeSignals[0].ID == c.LastSeenID {
         fmt.Println("✅ Already seen this email")
-        return []Email{}, nil // Return EMPTY ARRAY not nil
+        return []Email{}, nil
     }
 
-    // Update state - remember this email
     c.LastSeenID = activeSignals[0].ID
     
     fmt.Printf("✉️ Found %d new email(s)\n", len(activeSignals))

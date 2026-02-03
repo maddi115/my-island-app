@@ -1,4 +1,4 @@
-package notification
+package email
 
 import (
     "encoding/xml"
@@ -25,7 +25,7 @@ func ParseAndFilterGoogleEmails(xmlData io.Reader) ([]Email, error) {
 
     var filtered []Email
     for _, e := range feed.Entries {
-        // TEMPORARILY ACCEPT ALL EMAILS - no filter
+        // Accept all emails for now
         filtered = append(filtered, Email{
             ID:      e.ID,
             Title:   e.Title,
