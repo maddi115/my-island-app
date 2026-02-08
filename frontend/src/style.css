@@ -84,7 +84,7 @@ body {
 .app-icon:hover { transform: scale(1.2); }
 .app-icon i { font-size: 20px; color: var(--text-light); font-style: normal; }
 .app-icon[data-app=\"maddie\"] {
-  background-image: url(\"https://i.imgur.com/2D8gFpZ.png\");
+  background-image: url(\"https://i.imgur.com/9YVOkau.gif\");
   background-size: cover;
   background-position: center;
   background-color: transparent;
