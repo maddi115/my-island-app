@@ -15,11 +15,11 @@ document.querySelector('#app').innerHTML = `
       </div>
       <div class="apps-container">
         <div class="app-icon" data-app="maddie"></div>
-        <div class="app-icon"><i>📅</i></div>
+        <div class="app-icon" data-app="chat"><i>??</i></div>
+        <div class="app-icon"><i>??</i></div>
       </div>
     </div>
   </section>
 `;
 
-// Initialize dynamic island
 initDynamicIsland();
